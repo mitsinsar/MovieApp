@@ -18,7 +18,7 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(movie: Movie) {
         titleTextView.text = movie.title
         overviewTextView.text = movie.overview
-        Glide.with(posterImageView).load(movie.getImageUrl()).into(posterImageView)
+        Glide.with(posterImageView).load(movie.imageUrl).into(posterImageView)
     }
 
     companion object {

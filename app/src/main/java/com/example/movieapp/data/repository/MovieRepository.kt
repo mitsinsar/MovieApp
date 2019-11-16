@@ -7,10 +7,10 @@ import com.example.movieapp.data.network.MovieApi
 class MovieRepository(private val movieApi: MovieApi): BaseRepository() {
 
     suspend fun getPopularMovies(): List<Movie> {
-        return movieApi.getPopularMovies().results
+        return movieApi.getPopularMovies().orEmpty()
     }
 
-    suspend fun getMovieDetail(movieId: String): MovieDetail {
+    suspend fun getMovieDetail(movieId: String): MovieDetail? {
         return movieApi.getMovieDetail(movieId)
     }
 }

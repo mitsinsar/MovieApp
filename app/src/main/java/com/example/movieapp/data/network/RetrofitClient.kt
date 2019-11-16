@@ -1,6 +1,7 @@
 package com.example.movieapp.data.network
 
 import com.example.movieapp.BuildConfig
+import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -14,7 +15,7 @@ class RetrofitClient {
             return if (movieApi == null) {
                 movieApi = Retrofit.Builder()
                     .baseUrl(BuildConfig.BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(getGson()))
                     .build()
                     .create(MovieApi::class.java)
                 movieApi!!
@@ -22,5 +23,7 @@ class RetrofitClient {
                 movieApi!!
             }
         }
+
+        private fun getGson() = GsonBuilder().setLenient().create()
     }
 }
