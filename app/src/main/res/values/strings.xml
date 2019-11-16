@@ -6,4 +6,5 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="user_not_found">User not found</string>
+    <string name="tap_here_to_sign_up">Tap here to sign up</string>
 </resources>

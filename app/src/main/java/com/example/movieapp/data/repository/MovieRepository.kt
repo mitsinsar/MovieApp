@@ -4,7 +4,7 @@ import com.example.movieapp.data.model.Movie
 import com.example.movieapp.data.model.MovieDetail
 import com.example.movieapp.data.network.MovieApi
 
-class MovieRepository(private val movieApi: MovieApi) {
+class MovieRepository(private val movieApi: MovieApi): BaseRepository() {
 
     suspend fun getPopularMovies(): List<Movie> {
         return movieApi.getPopularMovies().results
