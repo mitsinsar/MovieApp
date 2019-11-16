@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Movie App</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="please_fill_all_the_fields">Please fill all the fields below</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="user_not_found">User not found</string>
+    <string name="tap_here_to_sign_up">Tap here to sign up</string>
 </resources>
