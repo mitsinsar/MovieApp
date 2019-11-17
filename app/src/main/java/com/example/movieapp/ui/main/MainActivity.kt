@@ -18,9 +18,16 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setupTopNav() {
-        supportActionBar?.setDisplayShowTitleEnabled(false)
         navController = Navigation.findNavController(this, R.id.mainFragmentContainer)
         NavigationUI.setupActionBarWithNavController(this, navController)
+    }
+
+    fun setActionBarTitle(title: String? = null, titleResId: Int? = null) {
+        if (titleResId != null) {
+            supportActionBar?.setTitle(titleResId)
+        } else {
+            supportActionBar?.title = title.orEmpty()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

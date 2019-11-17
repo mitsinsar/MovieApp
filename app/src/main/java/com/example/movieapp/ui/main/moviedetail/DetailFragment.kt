@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
@@ -14,6 +13,7 @@ import com.example.movieapp.base.ViewModelFactory
 import com.example.movieapp.data.model.MovieDetail
 import com.example.movieapp.data.network.RetrofitClient
 import com.example.movieapp.data.repository.MovieRepository
+import com.example.movieapp.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 class DetailFragment : BaseFragment() {
@@ -31,6 +31,11 @@ class DetailFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         getMovieDetail()
         initObserver()
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as? MainActivity)?.setActionBarTitle("")
     }
 
     private fun getMovieDetail() {
@@ -54,6 +59,7 @@ class DetailFragment : BaseFragment() {
             detailTaglineTextView.text = tagline
             detailOverviewTextView.text = overview
             detailReleaseDateTextView.text = releaseDate
+            (activity as? MainActivity)?.setActionBarTitle(title)
         }
     }
 }

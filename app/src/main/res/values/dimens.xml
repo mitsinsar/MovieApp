@@ -17,4 +17,9 @@
     <dimen name="edit_text_corner_radius">8dp</dimen>
     <dimen name="edit_text_height">36dp</dimen>
 
+    <!--    Poster    -->
+    <dimen name="poster_width">140dp</dimen>
+    <dimen name="poster_height">210dp</dimen>
+    <dimen name="poster_card_corner_radius">8dp</dimen>
+
 </resources>
