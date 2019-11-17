@@ -9,4 +9,12 @@
     <dimen name="spacing_xsmall">8dp</dimen>
     <dimen name="spacing_xxsmall">4dp</dimen>
 
+    <!--    Button   -->
+    <dimen name="button_corner_radius">48dp</dimen>
+    <dimen name="button_stroke_width">2dp</dimen>
+
+    <!--    EditText    -->
+    <dimen name="edit_text_corner_radius">8dp</dimen>
+    <dimen name="edit_text_height">48dp</dimen>
+
 </resources>
