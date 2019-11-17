@@ -15,6 +15,6 @@
 
     <!--    EditText    -->
     <dimen name="edit_text_corner_radius">8dp</dimen>
-    <dimen name="edit_text_height">48dp</dimen>
+    <dimen name="edit_text_height">36dp</dimen>
 
 </resources>

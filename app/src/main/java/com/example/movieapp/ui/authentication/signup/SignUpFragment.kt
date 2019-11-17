@@ -14,13 +14,11 @@ import com.example.movieapp.base.ViewModelFactory
 import com.example.movieapp.data.model.User
 import com.example.movieapp.data.repository.UserRepository
 import com.example.movieapp.extensions.textAsString
-import kotlinx.android.synthetic.main.fragment_sign_up.signUpPasswordEditText
-import kotlinx.android.synthetic.main.fragment_sign_up.signUpSignUpButton
-import kotlinx.android.synthetic.main.fragment_sign_up.signUpUsernameEditText
+import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 class SignUpFragment : BaseFragment() {
 
-    lateinit var signUpViewModel: SignUpViewModel
+    private lateinit var signUpViewModel: SignUpViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_sign_up, container, false)
@@ -38,7 +36,7 @@ class SignUpFragment : BaseFragment() {
     }
 
     private fun initUi() {
-        signUpSignUpButton.setOnClickListener {
+        signUpButton.setOnClickListener {
             if (isNameValid() && isPasswordValid()) {
                 val username = signUpUsernameEditText.textAsString
                 val password = signUpPasswordEditText.textAsString
@@ -47,6 +45,10 @@ class SignUpFragment : BaseFragment() {
             } else {
                 Toast.makeText(context, getString(R.string.please_fill_all_the_fields), Toast.LENGTH_SHORT).show()
             }
+        }
+
+        signUpSignInTextView.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
