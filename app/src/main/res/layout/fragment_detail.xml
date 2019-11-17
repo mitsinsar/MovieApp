@@ -73,4 +73,5 @@
             tools:text="@tools:sample/lorem/random[30]" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

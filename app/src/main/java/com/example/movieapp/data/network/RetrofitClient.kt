@@ -11,16 +11,14 @@ class RetrofitClient {
 
         @JvmStatic
         fun getMovieApi(): MovieApi {
-            return if (movieApi == null) {
+            if (movieApi == null) {
                 movieApi = Retrofit.Builder()
                     .baseUrl(BuildConfig.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(MovieApi::class.java)
-                movieApi!!
-            } else {
-                movieApi!!
             }
+            return movieApi!!
         }
     }
 }
