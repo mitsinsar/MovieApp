@@ -23,13 +23,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_IMAGE_URL", '"https://image.tmdb.org/t/p/w500"'
             buildConfigField "String", "API_KEY", '"11682bd9427fde70a4a7a1cc2f5488ed"'
-            buildConfigField "String", "BASE_URL", '"https://api.themoviedb.org/3/movie/"'
+            buildConfigField "String", "BASE_URL", 'https://movie-app-24721.firebaseio.com/"'
         }
 
         debug {
             buildConfigField "String", "BASE_IMAGE_URL", '"https://image.tmdb.org/t/p/w500"'
             buildConfigField "String", "API_KEY", '"11682bd9427fde70a4a7a1cc2f5488ed"'
-            buildConfigField "String", "BASE_URL", '"https://api.themoviedb.org/3/movie/"'
+            buildConfigField "String", "BASE_URL", '"https://movie-app-24721.firebaseio.com/"'
         }
     }
 }

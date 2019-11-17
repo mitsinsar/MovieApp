@@ -47,8 +47,8 @@ class DetailFragment : Fragment() {
 
     private fun initUi(movieDetail: MovieDetail?) {
         movieDetail?.run {
-            Glide.with(detailBackgroundImageView).load(getBackdropUrl()).into(detailBackgroundImageView)
-            Glide.with(detailPosterImageView).load(getPosterUrl()).into(detailPosterImageView)
+            Glide.with(detailBackgroundImageView).load(movieDetail.backdropPath).into(detailBackgroundImageView)
+            Glide.with(detailPosterImageView).load(movieDetail.posterPath).into(detailPosterImageView)
             detailTitleTextView.text = title
             detailTaglineTextView.text = tagline
             detailOverviewTextView.text = overview

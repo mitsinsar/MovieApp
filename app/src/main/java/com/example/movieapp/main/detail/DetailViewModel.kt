@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class DetailViewModel(private val movieRepository: MovieRepository) : ViewModel() {
 
     private var getMovieDetailJob: Job? = null
-    val getMovieDetailResult = MutableLiveData<MovieDetail>()
+    val getMovieDetailResult = MutableLiveData<MovieDetail?>()
 
     fun getMovieDetail(movieId: String) {
         if (getMovieDetailJob?.isActive == true) {
