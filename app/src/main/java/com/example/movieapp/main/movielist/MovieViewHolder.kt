@@ -13,11 +13,9 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private val posterImageView = itemView.itemMoviePosterImageView
     private val titleTextView = itemView.itemMovieTitleTextView
-    private val overviewTextView = itemView.itemMovieOverviewTextView
 
     fun bind(movie: Movie) {
         titleTextView.text = movie.title
-        overviewTextView.text = movie.overview
         Glide.with(posterImageView).load(movie.imageUrl).into(posterImageView)
     }
 

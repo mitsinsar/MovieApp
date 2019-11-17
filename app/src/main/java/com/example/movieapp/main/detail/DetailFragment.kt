@@ -13,6 +13,7 @@ import com.example.movieapp.base.ViewModelFactory
 import com.example.movieapp.data.model.MovieDetail
 import com.example.movieapp.data.network.RetrofitClient
 import com.example.movieapp.data.repository.MovieRepository
+import com.example.movieapp.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 class DetailFragment : Fragment() {
@@ -30,6 +31,11 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getMovieDetail()
         initObserver()
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as? MainActivity)?.setActionBarText("")
     }
 
     private fun getMovieDetail() {
@@ -53,6 +59,7 @@ class DetailFragment : Fragment() {
             detailTaglineTextView.text = tagline
             detailOverviewTextView.text = overview
             detailReleaseDateTextView.text = releaseDate
+            (activity as? MainActivity)?.setActionBarText(title.orEmpty())
         }
     }
 }

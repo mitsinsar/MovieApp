@@ -8,49 +8,33 @@
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="@dimen/poster_height"
+        android:layout_gravity="center">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/itemMoviePosterImageView"
-            android:layout_width="140dp"
-            android:layout_height="180dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_launcher_background" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/itemMovieTitleTextView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_normal"
-            android:ellipsize="end"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/white_CC"
+            android:gravity="center"
             android:maxLines="2"
+            android:padding="@dimen/spacing_xxsmall"
             android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/itemMoviePosterImageView"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="14sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeTextType="uniform"
             tools:text="@tools:sample/lorem/random" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/itemMovieOverviewTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_normal"
-            android:ellipsize="end"
-            android:gravity="center_vertical"
-            android:maxLines="4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/itemMoviePosterImageView"
-            app:layout_constraintTop_toBottomOf="@id/itemMovieTitleTextView"
-            tools:text="@tools:sample/lorem/random" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </com.google.android.material.card.MaterialCardView>

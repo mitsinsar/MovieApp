@@ -18,25 +18,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/detailPosterImageView"
-            android:layout_width="140dp"
-            android:layout_height="180dp"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/detailPosterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_large"
+            app:cardCornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="@id/detailTitleTextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/detailTitleTextView" />
+            app:layout_constraintTop_toTopOf="@id/detailTitleTextView">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detailPosterImageView"
+                android:layout_width="@dimen/poster_width"
+                android:layout_height="@dimen/poster_height"
+                android:scaleType="centerCrop" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/detailTitleTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/detailPosterImageView"
+            app:layout_constraintStart_toEndOf="@id/detailPosterCardView"
             app:layout_constraintTop_toBottomOf="@id/detailBackgroundImageView"
             tools:text="@tools:sample/lorem" />
 
@@ -46,8 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_xsmall"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/detailTitleTextView"
             app:layout_constraintStart_toStartOf="@id/detailTitleTextView"
             app:layout_constraintTop_toBottomOf="@id/detailTitleTextView"
@@ -57,7 +67,6 @@
             android:id="@+id/detailReleaseDateTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_normal"
             app:layout_constraintEnd_toEndOf="@id/detailTitleTextView"
             app:layout_constraintStart_toStartOf="@id/detailTitleTextView"
             app:layout_constraintTop_toBottomOf="@id/detailTaglineTextView" />
@@ -69,7 +78,7 @@
             android:layout_margin="@dimen/spacing_normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detailPosterImageView"
+            app:layout_constraintTop_toBottomOf="@id/detailPosterCardView"
             tools:text="@tools:sample/lorem/random[30]" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
