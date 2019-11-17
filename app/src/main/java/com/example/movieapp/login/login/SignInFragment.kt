@@ -13,12 +13,12 @@ import com.example.movieapp.R
 import com.example.movieapp.base.ViewModelFactory
 import com.example.movieapp.data.repository.UserRepository
 import com.example.movieapp.login.LoginActivity
-import com.example.movieapp.login.login.LoginFragmentDirections.actionLoginFragmentToSignUpFragment
+import com.example.movieapp.login.login.SignInFragmentDirections.actionLoginFragmentToSignUpFragment
 import kotlinx.android.synthetic.main.fragment_login.*
 
-class LoginFragment : Fragment() {
+class SignInFragment : Fragment() {
 
-    private lateinit var loginViewModel: LoginViewModel
+    private lateinit var signInViewModel: SignInViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_login, container, false)
@@ -36,19 +36,19 @@ class LoginFragment : Fragment() {
     }
 
     private fun initUi() {
-        loginLoginButton.setOnClickListener {
-            val username = loginUsernameEditText.text.toString()
-            val password = loginPasswordEditText.text.toString()
-            loginViewModel.isUserValid(username, password)
+        signInButton.setOnClickListener {
+            val username = signInUsernameEditText.text.toString()
+            val password = signInPasswordEditText.text.toString()
+            signInViewModel.isUserValid(username, password)
         }
 
-        loginSignUpTextView.setOnClickListener {
+        signInSignUpTextView.setOnClickListener {
             findNavController().navigate(actionLoginFragmentToSignUpFragment())
         }
     }
 
     private fun initObservers() {
-        loginViewModel.isUserValidResult.observe(viewLifecycleOwner, Observer { isSuccess ->
+        signInViewModel.isUserValidResult.observe(viewLifecycleOwner, Observer { isSuccess ->
             if (isSuccess) {
                 (activity as? LoginActivity)?.navigateToMainActivity()
             } else {
@@ -60,6 +60,6 @@ class LoginFragment : Fragment() {
     private fun initViewModel() {
         val sharedPreferences = (activity as LoginActivity).getSharedPreferences()
         val userRepository = UserRepository(sharedPreferences)
-        loginViewModel = ViewModelProviders.of(this, ViewModelFactory(userRepository)).get(LoginViewModel::class.java)
+        signInViewModel = ViewModelProviders.of(this, ViewModelFactory(userRepository)).get(SignInViewModel::class.java)
     }
 }

@@ -12,9 +12,11 @@
     <!--    Button   -->
     <dimen name="button_corner_radius">48dp</dimen>
     <dimen name="button_stroke_width">2dp</dimen>
+    <dimen name="button_height">60dp</dimen>
 
     <!--    EditText    -->
     <dimen name="edit_text_corner_radius">8dp</dimen>
-    <dimen name="edit_text_height">48dp</dimen>
+    <dimen name="edit_text_height">50dp</dimen>
+    <dimen name="edit_text_padding_horizontal">26dp</dimen>
 
 </resources>

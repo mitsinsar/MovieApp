@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class LoginViewModel(private val userRepository: UserRepository) : ViewModel() {
+class SignInViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     private var getUserJob: Job? = null
     val isUserValidResult = MutableLiveData<Boolean>()

@@ -36,15 +36,15 @@ class SignUpFragment : Fragment() {
     }
 
     private fun initUi() {
-        signUpSignUpButton.setOnClickListener {
+        signUpButton.setOnClickListener {
             if (isNameValid() && isPasswordValid()) {
-                val username = signUpUsernameEditText.text.toString()
-                val password = signUpPasswordEditText.text.toString()
-                val user = User(username, password)
-                signUpViewModel.saveUser(user)
+                saveUser()
             } else {
                 Toast.makeText(context, getString(R.string.please_fill_all_the_fields), Toast.LENGTH_SHORT).show()
             }
+        }
+        signUpSignInTextView.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
@@ -60,6 +60,13 @@ class SignUpFragment : Fragment() {
         val sharedPreferences = (activity as LoginActivity).getSharedPreferences()
         val userRepository = UserRepository(sharedPreferences)
         signUpViewModel = ViewModelProviders.of(this, ViewModelFactory(userRepository)).get(SignUpViewModel::class.java)
+    }
+
+    private fun saveUser() {
+        val username = signUpUsernameEditText.text.toString()
+        val password = signUpPasswordEditText.text.toString()
+        val user = User(username, password)
+        signUpViewModel.saveUser(user)
     }
 
     private fun isNameValid(): Boolean {
