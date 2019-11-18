@@ -1,6 +1,5 @@
 package com.example.movieapp.ui.authentication
 
-import android.content.Intent
 import android.os.Bundle
 import com.example.movieapp.R
 import com.example.movieapp.base.BaseActivity
@@ -14,8 +13,7 @@ class AuthenticationActivity : BaseActivity() {
     }
 
     fun navigateToMainActivity() {
-        val mainActivityIntent = Intent(this, MainActivity::class.java)
-        startActivity(mainActivityIntent)
+        startActivity(MainActivity.newIntent(this))
         finish()
     }
 }

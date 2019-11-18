@@ -1,6 +1,7 @@
 package com.example.movieapp.data.repository
 
 import android.content.SharedPreferences
+import com.example.movieapp.base.BaseRepository
 import com.example.movieapp.data.model.User
 
 class UserRepository(private val sharedPreferences: SharedPreferences) : BaseRepository() {

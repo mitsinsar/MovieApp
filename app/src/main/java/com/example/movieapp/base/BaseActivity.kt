@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 
 open class BaseActivity : AppCompatActivity() {
 
-    fun getSharedPreferences(): SharedPreferences = getSharedPreferences(sharedPrefName, Context.MODE_PRIVATE)
+    fun getSharedPreferences(): SharedPreferences = getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
 
     companion object {
-        private const val sharedPrefName = "movie_app_shared_pref"
+        private const val SHARED_PREF_NAME = "movie_app_shared_pref"
     }
 }

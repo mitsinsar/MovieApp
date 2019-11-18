@@ -2,7 +2,6 @@ package com.example.movieapp.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.movieapp.data.repository.BaseRepository
 import com.example.movieapp.data.repository.MovieRepository
 import com.example.movieapp.data.repository.UserRepository
 import com.example.movieapp.ui.authentication.signin.SignInViewModel
