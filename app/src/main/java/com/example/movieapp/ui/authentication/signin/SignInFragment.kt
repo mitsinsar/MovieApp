@@ -12,6 +12,7 @@ import com.example.movieapp.R
 import com.example.movieapp.base.BaseFragment
 import com.example.movieapp.base.ViewModelFactory
 import com.example.movieapp.data.repository.UserRepository
+import com.example.movieapp.extensions.textAsString
 import com.example.movieapp.ui.authentication.AuthenticationActivity
 import com.example.movieapp.ui.authentication.signin.SignInFragmentDirections.actionSignInFragmentToSignUpFragment
 import kotlinx.android.synthetic.main.fragment_sign_in.signInButton
@@ -40,8 +41,8 @@ class SignInFragment : BaseFragment() {
 
     private fun initUi() {
         signInButton.setOnClickListener {
-            val username = signInUsernameEditText.text.toString()
-            val password = signInPasswordEditText.text.toString()
+            val username = signInUsernameEditText.textAsString
+            val password = signInPasswordEditText.textAsString
             signInViewModel.isUserValid(username, password)
         }
 

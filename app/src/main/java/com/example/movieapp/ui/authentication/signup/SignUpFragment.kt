@@ -14,7 +14,10 @@ import com.example.movieapp.base.ViewModelFactory
 import com.example.movieapp.data.model.User
 import com.example.movieapp.data.repository.UserRepository
 import com.example.movieapp.extensions.textAsString
-import kotlinx.android.synthetic.main.fragment_sign_up.*
+import kotlinx.android.synthetic.main.fragment_sign_up.signUpButton
+import kotlinx.android.synthetic.main.fragment_sign_up.signUpPasswordEditText
+import kotlinx.android.synthetic.main.fragment_sign_up.signUpSignInTextView
+import kotlinx.android.synthetic.main.fragment_sign_up.signUpUsernameEditText
 
 class SignUpFragment : BaseFragment() {
 

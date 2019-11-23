@@ -1,5 +1,6 @@
 package com.example.movieapp.data.repository
 
+import com.example.movieapp.base.BaseRepository
 import com.example.movieapp.data.model.Movie
 import com.example.movieapp.data.model.MovieDetail
 import com.example.movieapp.data.network.MovieApi
