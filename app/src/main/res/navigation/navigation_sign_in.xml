@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_sing_in"
     app:startDestination="@id/signInFragment">
 
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.movieapp.ui.authentication.signin.SignInFragment"
-        android:label="SignInFragment">
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
@@ -16,6 +18,7 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.movieapp.ui.authentication.signup.SignUpFragment"
-        android:label="SignUpFragment" />
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up"/>
 
 </navigation>
